@@ -47,7 +47,7 @@ export function BookingModal({
 }: {
   open: boolean;
   onOpenChange: (o: boolean) => void;
-  preselectedVenue?: string;
+  preselectedVenue?: string | undefined;
   defaultTab?: "wedding" | "corporate";
 }) {
   const [tab, setTab] = useState<string>(defaultTab);
