@@ -59,42 +59,58 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+  --color-gold: var(--gold);
+  --color-gold-foreground: var(--gold-foreground);
+  --color-champagne: var(--champagne);
+  --color-sand: var(--sand);
+  --color-stone-warm: var(--stone-warm);
+  --font-serif: "Cormorant Garamond", "Playfair Display", Georgia, serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
 }
 
 :root {
-  --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.129 0.042 264.695);
+  --radius: 0.25rem;
+  --background: oklch(0.984 0.004 84);
+  --foreground: oklch(0.201 0.008 45);
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.129 0.042 264.695);
+  --card-foreground: oklch(0.201 0.008 45);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.129 0.042 264.695);
-  --primary: oklch(0.208 0.042 265.755);
-  --primary-foreground: oklch(0.984 0.003 247.858);
-  --secondary: oklch(0.968 0.007 247.896);
-  --secondary-foreground: oklch(0.208 0.042 265.755);
-  --muted: oklch(0.968 0.007 247.896);
-  --muted-foreground: oklch(0.554 0.046 257.417);
-  --accent: oklch(0.968 0.007 247.896);
-  --accent-foreground: oklch(0.208 0.042 265.755);
+  --popover-foreground: oklch(0.201 0.008 45);
+  --primary: oklch(0.201 0.008 45);
+  --primary-foreground: oklch(0.984 0.004 84);
+  --secondary: oklch(0.955 0.009 80);
+  --secondary-foreground: oklch(0.201 0.008 45);
+  --muted: oklch(0.962 0.007 80);
+  --muted-foreground: oklch(0.44 0.012 55);
+  --accent: oklch(0.938 0.016 78);
+  --accent-foreground: oklch(0.201 0.008 45);
   --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.984 0.003 247.858);
-  --border: oklch(0.929 0.013 255.508);
-  --input: oklch(0.929 0.013 255.508);
-  --ring: oklch(0.704 0.04 256.788);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
-  --sidebar: oklch(0.984 0.003 247.858);
-  --sidebar-foreground: oklch(0.129 0.042 264.695);
-  --sidebar-primary: oklch(0.208 0.042 265.755);
-  --sidebar-primary-foreground: oklch(0.984 0.003 247.858);
-  --sidebar-accent: oklch(0.968 0.007 247.896);
-  --sidebar-accent-foreground: oklch(0.208 0.042 265.755);
-  --sidebar-border: oklch(0.929 0.013 255.508);
-  --sidebar-ring: oklch(0.704 0.04 256.788);
+  --destructive-foreground: oklch(0.99 0 0);
+  --border: oklch(0.909 0.008 75);
+  --input: oklch(0.888 0.01 75);
+  --ring: oklch(0.72 0.055 75);
+  --gold: oklch(0.72 0.076 78);
+  --gold-foreground: oklch(0.99 0.003 84);
+  --champagne: oklch(0.955 0.012 78);
+  --sand: oklch(0.79 0.043 65);
+  --stone-warm: oklch(0.909 0.008 75);
+  --gradient-gold: linear-gradient(135deg, oklch(0.65 0.06 65), oklch(0.76 0.09 82));
+  --gradient-pearl: linear-gradient(180deg, oklch(0.99 0.003 84), oklch(0.962 0.01 78));
+  --shadow-soft: 0 10px 30px -18px oklch(0.4 0.05 60 / 0.45);
+  --shadow-elegant: 0 26px 60px -34px oklch(0.35 0.05 60 / 0.5);
+  --chart-1: oklch(0.72 0.076 78);
+  --chart-2: oklch(0.6 0.05 60);
+  --chart-3: oklch(0.5 0.03 55);
+  --chart-4: oklch(0.82 0.05 80);
+  --chart-5: oklch(0.9 0.02 80);
+  --sidebar: oklch(0.984 0.004 84);
+  --sidebar-foreground: oklch(0.201 0.008 45);
+  --sidebar-primary: oklch(0.201 0.008 45);
+  --sidebar-primary-foreground: oklch(0.984 0.004 84);
+  --sidebar-accent: oklch(0.955 0.009 80);
+  --sidebar-accent-foreground: oklch(0.201 0.008 45);
+  --sidebar-border: oklch(0.909 0.008 75);
+  --sidebar-ring: oklch(0.72 0.055 75);
 }
 
 .dark {
@@ -141,4 +157,31 @@
     background-color: var(--color-background);
     color: var(--color-foreground);
   }
+}
+
+@layer base {
+  body {
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-serif);
+    font-weight: 400;
+  }
+}
+
+@utility eyebrow {
+  font-size: 0.6875rem;
+  letter-spacing: 0.36em;
+  text-transform: uppercase;
+  color: var(--muted-foreground);
+}
+
+@utility gold-rule {
+  height: 1px;
+  width: 4rem;
+  background: var(--gradient-gold);
 }
